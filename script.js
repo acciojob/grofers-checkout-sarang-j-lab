@@ -3,7 +3,11 @@ getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-//Add your code here
+//Add your code 
+	const totalEle = document.querySelector("#totalEle");
+	if(totalEle){
+		return;
+	}
     const prices = document.querySelectorAll(".price");
     let total = 0;
     prices.forEach((ele)=>{
@@ -11,6 +15,7 @@ const getSum = () => {
     })
     const table = document.querySelector("table")
     const tr = document.createElement("tr");
+	tr.setAttribute("id","totalEle")
     const td = document.createElement("td");
     td.textContent = "Total is:- " +total;
     tr.append(td); 
